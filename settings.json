@@ -1,6 +1,6 @@
 {
   "bot": {
-    "default_server": "aternos_server_1",
+    "default_server": "local_server",
     "ai_decision_interval": 3,
     "perception_range": 32,
     "auto_reconnect": true,
@@ -8,8 +8,8 @@
     "max_reconnect_attempts": 5
   },
   "servers": {
-    "aternos_server_1": {
-      "name": "Aternos server 1",
+    "local_server": {
+      "name": "LOCAL mc server",
       "host": "localhost",
       "port": 53067,
       "type": "java",
