@@ -1,0 +1,63 @@
+{
+  "bot": {
+    "default_server": "aternos_server_1",
+    "ai_decision_interval": 3,
+    "perception_range": 32,
+    "auto_reconnect": true,
+    "reconnect_delay": 5,
+    "max_reconnect_attempts": 5
+  },
+  "servers": {
+    "aternos_server_1": {
+      "name": "Aternos server 1",
+      "host": "localhost",
+      "port": 53067,
+      "type": "java",
+      "version": "1.21",
+      "username": "AIBot",
+      "auth": "offline",
+      "enabled": true
+    }
+  },
+  "ai_apis": {
+    "primary": {
+      "name": "Hugging Face",
+      "type": "huggingface",
+      "endpoint": "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2",
+      "api_key": "",
+      "timeout": 8,
+      "max_tokens": 300,
+      "temperature": 0.7,
+      "enabled": true,
+      "priority": 1
+    },
+    "secondary": {
+      "name": "Groq",
+      "type": "openai_compatible",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+      "api_key": "",
+      "model": "llama-3.1-70b-versatile",
+      "timeout": 10,
+      "max_tokens": 300,
+      "enabled": true,
+      "priority": 2
+    },
+    "fallback": {
+      "name": "Rule-based AI",
+      "type": "rules",
+      "enabled": true,
+      "priority": 999
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "console_level": "INFO",
+    "file_level": "DEBUG",
+    "log_dir": "logs",
+    "max_bytes": 10485760,
+    "backup_count": 5,
+    "format": "%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    "date_format": "%Y-%m-%d %H:%M:%S",
+    "colorize_console": true
+  }
+}
